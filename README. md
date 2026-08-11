@@ -1,0 +1,41 @@
+# Website Portfolio Pribadi
+
+## Deskripsi Singkat
+Website portfolio pribadi yang dibuat untuk memperkenalkan diri, menampilkan informasi pendidikan, hobi, minat, keterampilan, dan kontak. Website dibuat menggunakan HTML, CSS, dan JavaScript serta memiliki tampilan yang responsif untuk desktop dan mobile.
+
+## Fitur-Fitur
+- Halaman Home
+- Profil atau About Me
+- Riwayat pendidikan
+- Hobi dan minat
+- Daftar skills
+- Animasi pada website
+- Efek hover
+- Dark mode
+- Tampilan responsif untuk desktop dan mobile
+- Form kontak
+
+## Cara Menjalankan
+
+1. Download atau clone project ini.
+2. Buka folder project.
+3. Buka file `index.html`.
+4. Website dapat dijalankan menggunakan browser seperti Google Chrome, Microsoft Edge, atau Firefox.
+
+## Screenshot Website
+
+### Tampilan Desktop
+![Screenshot Desktop](fotodekstop.png)
+
+### Tampilan Mobile
+![Screenshot Mobile](fotomobile.png)
+
+## Link Website
+
+Website yang sudah di-deploy:
+https://zenitsufar.netlify.app
+
+## Teknologi yang Digunakan
+- HTML
+- CSS
+- JavaScript
