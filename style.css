@@ -1,0 +1,432 @@
+/* ============================================================
+   1. VARIABEL CSS (THEME & DARK MODE)
+   ============================================================ */
+:root {
+    /* Warna Light Mode */
+    --warna-utama: #2c3e50;
+    --warna-aksen: #7620e6;
+    --warna-latar: #f4f4f9;
+    --warna-teks: #333;
+    --warna-putih: #ffffff;
+    
+    /* Utilitas Global */
+    --shadow: rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+/* Warna Dark Mode */
+body.dark-mode {
+    --warna-utama: #1a1a2e;
+    --warna-aksen: #4cc9f0;
+    --warna-latar: #16213e;
+    --warna-teks: #e0e0e0;
+    --warna-putih: #0f3460;
+    --shadow: rgba(0, 0, 0, 0.4);
+}
+
+
+/*2. RESET & GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--warna-teks);
+    background-color: var(--warna-latar);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* ============================================================
+   3. HEADER, NAVBAR & HAMBURGER MENU
+   ============================================================ */
+header {
+    background-color: var(--warna-utama);
+    color: var(--warna-putih);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--shadow);
+    transition: background-color var(--transition-speed);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    gap: 25px;
+}
+
+header nav a {
+    color: var(--warna-putih);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--warna-aksen);
+}
+
+/* Tombol Toggle Dark Mode */
+#theme-toggle {
+    background: none;
+    border: 2px solid var(--warna-putih);
+    color: var(--warna-putih);
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    transition: all 0.3s;
+}
+
+#theme-toggle:hover {
+    background: var(--warna-aksen);
+    border-color: var(--warna-aksen);
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--warna-putih);
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+
+/* Animasi Hamburger menjadi X */
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+
+/* ============================================================
+   4. HERO SECTION & TYPING EFFECT
+   ============================================================ */
+.hero {
+    background-color: var(--warna-putih);
+    padding: 60px 20px;
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: background-color var(--transition-speed);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.foto-profil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--warna-aksen);
+    flex-shrink: 0;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero h2 {
+    color: var(--warna-utama);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Kursor Berkedip Typing Effect */
+.cursor {
+    animation: blink 1s infinite;
+    color: var(--warna-aksen);
+    font-weight: bold;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+
+/* ============================================================
+   5. SECTIONS UMUM (ABOUT, PROJECTS, SKILLS, CONTACT)
+   ============================================================ */
+.about, 
+.projects, 
+.skills, 
+.contact {
+    background-color: var(--warna-putih);
+    padding: 40px 20px;
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: background-color var(--transition-speed);
+}
+
+.about h2, 
+.projects h2, 
+.skills h2, 
+.contact h2 {
+    text-align: center;
+    color: var(--warna-utama);
+    margin-bottom: 20px;
+}
+
+.about p {
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* ============================================================
+   6. PROJECTS GRID & TAGS
+   ============================================================ */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background-color: var(--warna-latar);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid var(--warna-aksen);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--warna-aksen);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    margin-right: 8px;
+    margin-top: 10px;
+}
+
+
+/* ============================================================
+   7. SKILLS GRID & HOVER EFFECT
+   ============================================================ */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background-color: var(--warna-latar);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--warna-utama);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    background-color: var(--warna-aksen);
+    color: var(--warna-putih);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+@media (min-width: 769px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* ============================================================
+   8. CONTACT FORM INTERAKTIF
+   ============================================================ */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--warna-utama);
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: var(--warna-latar);
+    color: var(--warna-teks);
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--warna-aksen);
+}
+
+#submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--warna-aksen);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submit-btn:hover {
+    background-color: #2980b9;
+}
+
+#submit-btn:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+.form-status {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    min-height: 24px;
+}
+
+.form-status.success { color: #27ae60; }
+.form-status.error { color: #e74c3c; }
+
+
+/* ============================================================
+   9. ANIMASI (SCROLL REVEAL & FADE IN)
+   ============================================================ */
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade In Initial Load Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero, .skills {
+    animation: fadeIn 1s ease-out;
+}
+
+
+/* ============================================================
+   10. FOOTER
+   ============================================================ */
+footer {
+    background-color: var(--warna-utama);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    transition: background-color var(--transition-speed);
+}
+
+
+/* ============================================================
+   11. RESPONSIVE DESIGN (MOBILE FIRST)
+   ============================================================ */
+@media (max-width: 768px) {
+    /* Tampilkan Hamburger Menu */
+    .hamburger { display: flex; }
+
+    /* Dropdown Navigasi Mobile */
+    header nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--warna-utama);
+        padding: 20px;
+        gap: 15px;
+        box-shadow: 0 5px 10px var(--shadow);
+    }
+
+    header nav.show { display: flex; }
+
+    /* Hero Section Vertikal */
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h2 { font-size: 2rem; }
+
+    /* Grid Jadi 1 Kolom */
+    .projects-grid, 
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 { font-size: 1.5rem; }
+    .foto-profil { width: 150px; height: 150px; }
+}
